@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Water Reminder</string>
+
+    <string-array name="weight_identifiers">
+        <item>LBS</item>
+        <item>KGS</item>
+    </string-array>
 </resources>
