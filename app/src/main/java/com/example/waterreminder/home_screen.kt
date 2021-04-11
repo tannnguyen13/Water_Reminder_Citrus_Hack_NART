@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.util.Log
+import android.widget.TextView
 
 
 class home_screen : AppCompatActivity() {
@@ -18,13 +19,16 @@ class home_screen : AppCompatActivity() {
             startActivity(intent);
         }
 
-//        val sharedPref = getSharedPreferences("SHARED_PREFS", MODE_PRIVATE);
-//        val editor = sharedPref.edit();
 
+        Log.d("CREATION", "jjj");
         val name = findViewById<Button>(R.id.button3);
         name.setOnClickListener{
             val intent = Intent(this, Calander::class.java);
             startActivity(intent);
         }
+
+
     }
+
+
 }

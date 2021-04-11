@@ -7,9 +7,11 @@ import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Spinner
 import android.content.SharedPreferences
+import android.os.Looper
 import android.util.Log
 import android.widget.TextView
 import androidx.core.text.set
+import java.util.*
 import kotlin.math.ceil
 
 
@@ -40,30 +42,36 @@ class grab_weight : AppCompatActivity() {
         else{
             spinner.setSelection(1);
         }
-        Log.d("CREATION", "here");
+//        Log.d("CREATION", "here");
     }
 
-    override fun onStart(){
-        super.onStart();
-        Log.d("CREATION", "bread");
+    override fun onUserInteraction() {
+        super.onUserInteraction();
+
+/*        Log.d("CREATION", "bread");*/
         val rec_water = findViewById<TextView>(R.id.rec_water_view);
         val weight = resources.getStringArray(R.array.weight_identifiers);
         val spinner = findViewById<Spinner>(R.id.weight_spinner);
         val weightVal = findViewById<EditText> (R.id.editText_Weight);
 
-        var recommended = weightVal.text.toString().toInt();
-        if (spinner.selectedItem.toString() == "KGS"){
-            recommended = recommended * 2;
+        if (weightVal.text.toString() != "") {
+            var recommended = weightVal.text.toString().toInt();
+            if (spinner.selectedItem.toString() == "KGS") {
+                recommended = recommended * 2;
+            }
+
+            var waterRecommended = recommended / 2;
+
+            var inLiters = waterRecommended / 33.814;
+
+            rec_water.setText(waterRecommended.toString() + " Oz or ~" + (inLiters.toFloat()).toString() + "L");
         }
-
-        var waterRecommended = recommended / 2;
-
-        var inLiters = waterRecommended / 33.814;
-
-        rec_water.setText(waterRecommended.toString() + " Oz or ~" +(inLiters.toFloat()).toInt().toString() + "L");
     }
+
     override fun onPause() {
         super.onPause();
+
+        val rec_water = findViewById<TextView>(R.id.rec_water_view);
 
         val sharedPref = getSharedPreferences("SHARED_PREFS", MODE_PRIVATE);
         val editor = sharedPref.edit();
@@ -77,8 +85,23 @@ class grab_weight : AppCompatActivity() {
             editor.putInt("Weight", weightVal.text.toString().toInt());
             editor.commit();
         }
-
         editor.putString("ScaleType", spinner.selectedItem.toString());
         editor.commit();
+
+        if (weightVal.text.toString() != "") {
+
+            var recommended = weightVal.text.toString().toInt();
+            if (spinner.selectedItem.toString() == "KGS") {
+                recommended = recommended * 2;
+            }
+
+            var waterRecommended = recommended / 2;
+
+            var inLiters = waterRecommended / 33.814;
+            //Log.d("CREATION", "yes");
+            editor.putInt("Water_Required", waterRecommended);
+            editor.commit();
+           // Log.d("CREATION", sharedPref.getInt("Water_Required", 0).toString());
+        }
      }
 }
