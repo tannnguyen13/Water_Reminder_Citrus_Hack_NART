@@ -4,11 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.util.Log
 
-class MainActivity : AppCompatActivity() {
+
+class home_screen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.home_screen)
+        setContentView(R.layout.main_activity)
 
         val button = findViewById<Button>(R.id.button_to_weight);
         button.setOnClickListener{
@@ -16,7 +18,13 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent);
         }
 
-        val sharedPref = getSharedPreferences("SHARED_PREFS", MODE_PRIVATE);
-        val editor = sharedPref.edit();
+//        val sharedPref = getSharedPreferences("SHARED_PREFS", MODE_PRIVATE);
+//        val editor = sharedPref.edit();
+
+        val name = findViewById<Button>(R.id.button3);
+        name.setOnClickListener{
+            val intent = Intent(this, Calander::class.java);
+            startActivity(intent);
+        }
     }
 }
