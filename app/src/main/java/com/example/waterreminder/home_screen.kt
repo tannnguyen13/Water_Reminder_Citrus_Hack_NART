@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.util.Log
+import android.view.View
 
 
 class home_screen : AppCompatActivity() {
@@ -27,4 +28,6 @@ class home_screen : AppCompatActivity() {
             startActivity(intent);
         }
     }
+
+    fun OnTap(view: View) {}
 }
