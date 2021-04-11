@@ -9,15 +9,21 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 
 
 class name : AppCompatActivity() {
+
+    var count = 0;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
+
+
 
 
         createNotificationChannel()
@@ -33,6 +39,15 @@ class name : AppCompatActivity() {
             val tenSecondsInMillis = (1000 * 10).toLong()
             alarmManager[AlarmManager.RTC_WAKEUP, timeAtButtonClick + tenSecondsInMillis] =
                 pendingIntent
+
+            val sharedPref = getSharedPreferences("SHARED_PREFS", MODE_PRIVATE)
+            val editor = sharedPref.edit()
+            editor.putInt("Counter_Daily", sharedPref.getInt("Counter_Daily", 0) + 1)
+            editor.commit()
+            //button.setText(sharedPref.getInt("Counter_Daily", 0))
+
+            val textview = findViewById<TextView>(R.id.streaks)
+            textview.setText("Streaks: " + sharedPref.getInt("Counter_Daily", 0).toString())
         }
 
         val butt2 = findViewById<Button>(R.id.butt2)
@@ -47,6 +62,15 @@ class name : AppCompatActivity() {
             val tenSecondsInMillis = (1000 * 3600).toLong()
             alarmManager[AlarmManager.RTC_WAKEUP, timeAtButtonClick + tenSecondsInMillis] =
                 pendingIntent
+
+            val sharedPref = getSharedPreferences("SHARED_PREFS", MODE_PRIVATE)
+            val editor = sharedPref.edit()
+            editor.putInt("Counter_Daily", sharedPref.getInt("Counter_Daily", 0) + 1)
+            editor.commit()
+            //button.setText(sharedPref.getInt("Counter_Daily", 0))
+
+            val textview = findViewById<TextView>(R.id.streaks)
+            textview.setText("Streaks: " + sharedPref.getInt("Counter_Daily", 0).toString())
         }
 
         val butt = findViewById<Button>(R.id.butt)
@@ -61,6 +85,15 @@ class name : AppCompatActivity() {
             val tenSecondsInMillis = (1000 * 1800).toLong()
             alarmManager[AlarmManager.RTC_WAKEUP, timeAtButtonClick + tenSecondsInMillis] =
                 pendingIntent
+
+            val sharedPref = getSharedPreferences("SHARED_PREFS", MODE_PRIVATE)
+            val editor = sharedPref.edit()
+            editor.putInt("Counter_Daily", sharedPref.getInt("Counter_Daily", 0) + 1)
+            editor.commit()
+            //button.setText(sharedPref.getInt("Counter_Daily", 0))
+
+            val textview = findViewById<TextView>(R.id.streaks)
+            textview.setText("Streaks: " + sharedPref.getInt("Counter_Daily", 0).toString())
         }
 
 
@@ -100,5 +133,22 @@ class name : AppCompatActivity() {
         }
     }
 
+
+//    fun onTap(view:View){
+//        val sharedPref = getSharedPreferences("SHARED_PREFS", MODE_PRIVATE);
+//
+//        val sharedPref = getSharedPreferences("SHARED_PREFS", MODE_PRIVATE);
+//        val editor = sharedPref.edit();
+//        editor.putInt("Counter_Daily", sharedPref.getInt("Counter_Daily", 0) + 1);
+//        editor.commit();
+//
+//        val thing = findViewbyId<Textview>
+//        attatch
+//        thing.setText(sharedPref.getInt)
+//
+//        //count++
+//       // val textview = findViewById<TextView>(R.id.streaks)
+//        //textview.text = "Streaks: $count"
+//    }
 
 }

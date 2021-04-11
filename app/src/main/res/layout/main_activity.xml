@@ -38,6 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
+        android:onClick="onTap"
         android:text="10 seconds reminder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,6 +48,7 @@
         android:id="@+id/butt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onTap"
         android:text="30 minute reminder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,8 +58,21 @@
         android:id="@+id/butt2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onTap"
         android:text="1 hour reminder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/butt" />
+
+    <TextView
+        android:id="@+id/streaks"
+        android:layout_width="128dp"
+        android:layout_height="82dp"
+        android:text="Streaks: 0"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/butt2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
