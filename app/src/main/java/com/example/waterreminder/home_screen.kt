@@ -12,11 +12,11 @@ class home_screen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
 
-        val button = findViewById<Button>(R.id.button_to_weight);
+/*        val button = findViewById<Button>(R.id.button_to_weight);
         button.setOnClickListener{
             val intent = Intent(this, grab_weight::class.java);
             startActivity(intent);
-        }
+        }*/
 
 //        val sharedPref = getSharedPreferences("SHARED_PREFS", MODE_PRIVATE);
 //        val editor = sharedPref.edit();
