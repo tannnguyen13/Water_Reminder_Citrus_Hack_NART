@@ -20,6 +20,7 @@
         <activity android:name=".home_screen">
 
         </activity>
+        <activity android:name=".event_adder"/>
         <activity android:name=".Calander"></activity>
         <activity
             android:name=".grab_weight"
