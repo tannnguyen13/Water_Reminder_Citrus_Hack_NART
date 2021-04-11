@@ -10,6 +10,7 @@ import android.content.SharedPreferences
 import android.util.Log
 import android.widget.TextView
 import androidx.core.text.set
+import kotlin.math.ceil
 
 
 class grab_weight : AppCompatActivity() {
@@ -40,20 +41,10 @@ class grab_weight : AppCompatActivity() {
             spinner.setSelection(1);
         }
         Log.d("CREATION", "here");
-//        if (weightVal.text.toString() != "") {
-//            val num = weightVal.text.toString().toInt();
-//            Log.d("CREATION", "here2");
-//            if (num != 0) {
-//                weightVal.setText(sharedPref.getInt("Weight", 0));
-//            }
-//        }
-
-
-
     }
     override fun onResume(){
         super.onResume();
-
+        Log.d("CREATION", "bread");
         val rec_water = findViewById<TextView>(R.id.rec_water_view);
         val weight = resources.getStringArray(R.array.weight_identifiers);
         val spinner = findViewById<Spinner>(R.id.weight_spinner);
@@ -68,8 +59,9 @@ class grab_weight : AppCompatActivity() {
 
         var inLiters = waterRecommended / 33.814;
 
-        rec_water.setText(inLiters.toString());
+        rec_water.setText(waterRecommended.toString() + " Oz or ~" +(inLiters.toFloat()).toInt().toString() + "L");
     }
+
     override fun onPause() {
         super.onPause();
 
@@ -80,13 +72,12 @@ class grab_weight : AppCompatActivity() {
         val spinner = findViewById<Spinner>(R.id.weight_spinner);
 
         val weightVal = findViewById<EditText> (R.id.editText_Weight);
-        Log.d("CREATION", weightVal.text.toString());
+       // Log.d("CREATION", weightVal.text.toString());
         if (weightVal.text.toString() != "0" && weightVal.text.toString() != "") {
             editor.putInt("Weight", weightVal.text.toString().toInt());
             editor.commit();
         }
 
-        Log.d("CREATION", spinner.selectedItem.toString());
         editor.putString("ScaleType", spinner.selectedItem.toString());
         editor.commit();
      }
