@@ -42,7 +42,7 @@ class grab_weight : AppCompatActivity() {
         }
         Log.d("CREATION", "here");
     }
-    override fun onResume(){
+    /*override fun onResume(){
         super.onResume();
         Log.d("CREATION", "bread");
         val rec_water = findViewById<TextView>(R.id.rec_water_view);
@@ -60,7 +60,7 @@ class grab_weight : AppCompatActivity() {
         var inLiters = waterRecommended / 33.814;
 
         rec_water.setText(waterRecommended.toString() + " Oz or ~" +(inLiters.toFloat()).toInt().toString() + "L");
-    }
+    }*/
 
     override fun onPause() {
         super.onPause();

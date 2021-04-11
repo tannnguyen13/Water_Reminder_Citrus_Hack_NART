@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".grab_weight">
+    tools:context=".grab_weight"
+    android:background="@drawable/background">
 
     <Spinner
         android:id="@+id/weight_spinner"
