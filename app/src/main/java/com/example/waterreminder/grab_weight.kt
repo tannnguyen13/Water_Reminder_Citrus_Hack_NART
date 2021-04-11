@@ -42,8 +42,8 @@ class grab_weight : AppCompatActivity() {
         }
         Log.d("CREATION", "here");
     }
-    override fun onResume(){
-        super.onResume();
+    override fun onUserInteraction(){
+        super.onUserInteraction();
         Log.d("CREATION", "bread");
         val rec_water = findViewById<TextView>(R.id.rec_water_view);
         val weight = resources.getStringArray(R.array.weight_identifiers);
