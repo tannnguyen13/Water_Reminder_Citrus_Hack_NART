@@ -51,7 +51,7 @@ class name : AppCompatActivity() {
             textview.setText("Streaks: " + sharedPref.getInt("Counter_Daily", 0).toString())
         }
 
-        val butt2 = findViewById<Button>(R.id.butt2)
+        val butt2 = findViewById<ImageButton>(R.id.butt2)
         butt2.setOnClickListener { v: View? ->
             Toast.makeText(this, "Reminder Set!", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, ReminderBroadcast::class.java)
@@ -74,7 +74,7 @@ class name : AppCompatActivity() {
             textview.setText("Streaks: " + sharedPref.getInt("Counter_Daily", 0).toString())
         }
 
-        val butt = findViewById<Button>(R.id.butt)
+        val butt = findViewById<ImageButton>(R.id.butt)
         butt.setOnClickListener { v: View? ->
             Toast.makeText(this, "Reminder Set!", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, ReminderBroadcast::class.java)

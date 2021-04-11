@@ -64,11 +64,9 @@ class grab_weight : AppCompatActivity() {
             var waterRecommended = recommended / 2;
 
             var inLiters = waterRecommended / 33.814;
-        
-    }
             rec_water.setText(waterRecommended.toString() + " Oz or ~" + (inLiters.toFloat()).toString() + "L");
-        }
     }
+        }
 
     override fun onPause() {
         super.onPause();

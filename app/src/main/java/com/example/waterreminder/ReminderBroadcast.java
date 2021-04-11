@@ -12,7 +12,7 @@ public class ReminderBroadcast extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent){
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "notifyLemubit")
                 //.setSmallIcon(R.drawable.ic_add_alert_black_24dp)
-                .setSmallIcon(R.drawable.ic_launcher_background)
+                .setSmallIcon(R.drawable.logo)
                 .setContentTitle("Drink Water Reminder")
                 .setContentText("Don't forget to drink water. Set next reminder.")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);

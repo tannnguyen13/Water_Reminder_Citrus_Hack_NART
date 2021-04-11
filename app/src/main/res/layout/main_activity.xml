@@ -110,6 +110,7 @@
         app:layout_constraintVertical_bias="0.344" />
 
     <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView2"
         android:layout_width="112dp"
         android:layout_height="131dp"
         android:background="@null"
@@ -120,15 +121,15 @@
 
     <pl.droidsonroids.gif.GifImageButton
         android:id="@+id/b_timer"
-        android:layout_width="127dp"
-        android:layout_height="114dp"
+        android:layout_width="106dp"
+        android:layout_height="98dp"
         android:layout_marginTop="24dp"
         android:background="@null"
         android:scaleType="fitCenter"
         android:src="@drawable/timer10s"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gifImageView"
         app:layout_constraintVertical_bias="0.0" />
@@ -142,5 +143,45 @@
         android:src="@drawable/scale"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/streaks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="28dp"
+        android:text="Streaks: 0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gifImageView2" />
+
+    <pl.droidsonroids.gif.GifImageButton
+        android:id="@+id/butt"
+        android:layout_width="106dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="24dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/timer30m"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/butt2"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toEndOf="@+id/b_timer"
+        app:layout_constraintTop_toBottomOf="@+id/gifImageView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <pl.droidsonroids.gif.GifImageButton
+        android:id="@+id/butt2"
+        android:layout_width="107dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="24dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/timer1h"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.947"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gifImageView"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
