@@ -42,6 +42,7 @@ class grab_weight : AppCompatActivity() {
         }
         Log.d("CREATION", "here");
     }
+  
     override fun onUserInteraction(){
         super.onUserInteraction();
         Log.d("CREATION", "bread");
@@ -63,7 +64,8 @@ class grab_weight : AppCompatActivity() {
             var waterRecommended = recommended / 2;
 
             var inLiters = waterRecommended / 33.814;
-
+        
+    }
             rec_water.setText(waterRecommended.toString() + " Oz or ~" + (inLiters.toFloat()).toString() + "L");
         }
     }

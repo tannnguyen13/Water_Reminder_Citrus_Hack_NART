@@ -9,6 +9,7 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -27,7 +28,7 @@ class name : AppCompatActivity() {
 
 
         createNotificationChannel()
-        val button = findViewById<Button>(R.id.b_timer)
+        val button = findViewById<ImageButton>(R.id.b_timer)
         button.setOnClickListener { v: View? ->
             Toast.makeText(this, "Reminder Set!", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, ReminderBroadcast::class.java)
@@ -96,14 +97,8 @@ class name : AppCompatActivity() {
             textview.setText("Streaks: " + sharedPref.getInt("Counter_Daily", 0).toString())
         }
 
+        val variableName = findViewById<ImageButton>(R.id.button_to_weight2);
 
-
-
-
-
-
-
-        val variableName = findViewById<Button>(R.id.button_to_weight2);
         variableName.setOnClickListener{
             val intent = Intent(this, grab_weight::class.java);
             startActivity(intent);
@@ -112,7 +107,7 @@ class name : AppCompatActivity() {
 //        val sharedPref = getSharedPreferences("SHARED_PREFS", MODE_PRIVATE);
 //        val editor = sharedPref.edit();
 
-        val name = findViewById<Button>(R.id.button3);
+        val name = findViewById<pl.droidsonroids.gif.GifImageButton>(R.id.button);
         name.setOnClickListener{
             val intent = Intent(this, Calander::class.java);
             startActivity(intent);

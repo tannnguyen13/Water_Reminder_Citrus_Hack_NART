@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.util.Log
+import android.widget.ImageButton
 import android.view.View
 
 
@@ -22,7 +23,7 @@ class home_screen : AppCompatActivity() {
 //        val sharedPref = getSharedPreferences("SHARED_PREFS", MODE_PRIVATE);
 //        val editor = sharedPref.edit();
 
-        val name = findViewById<Button>(R.id.button3);
+        val name = findViewById<pl.droidsonroids.gif.GifImageButton>(R.id.button);
         name.setOnClickListener{
             val intent = Intent(this, Calander::class.java);
             startActivity(intent);

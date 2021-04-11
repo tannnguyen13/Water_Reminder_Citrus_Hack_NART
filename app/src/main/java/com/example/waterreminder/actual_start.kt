@@ -9,6 +9,7 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_screen)
 
-        val b2 = findViewById<Button>(R.id.home_scr)
+        val b2 = findViewById<ImageButton>(R.id.home_scr)
         b2.setOnClickListener {
             val intent = Intent(this, name::class.java)
             startActivity(intent)
