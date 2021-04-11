@@ -23,7 +23,7 @@ class name : AppCompatActivity() {
         createNotificationChannel()
         val button = findViewById<Button>(R.id.b_timer)
         button.setOnClickListener { v: View? ->
-            Toast.makeText(this, "reminder Set!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Reminder Set!", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, ReminderBroadcast::class.java)
             val pendingIntent =
                 PendingIntent.getBroadcast(this, 0, intent, 0)
@@ -34,6 +34,41 @@ class name : AppCompatActivity() {
             alarmManager[AlarmManager.RTC_WAKEUP, timeAtButtonClick + tenSecondsInMillis] =
                 pendingIntent
         }
+
+        val butt2 = findViewById<Button>(R.id.butt2)
+        butt2.setOnClickListener { v: View? ->
+            Toast.makeText(this, "Reminder Set!", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ReminderBroadcast::class.java)
+            val pendingIntent =
+                PendingIntent.getBroadcast(this, 0, intent, 0)
+            val alarmManager =
+                getSystemService(ALARM_SERVICE) as AlarmManager
+            val timeAtButtonClick = System.currentTimeMillis()
+            val tenSecondsInMillis = (1000 * 3600).toLong()
+            alarmManager[AlarmManager.RTC_WAKEUP, timeAtButtonClick + tenSecondsInMillis] =
+                pendingIntent
+        }
+
+        val butt = findViewById<Button>(R.id.butt)
+        butt.setOnClickListener { v: View? ->
+            Toast.makeText(this, "Reminder Set!", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ReminderBroadcast::class.java)
+            val pendingIntent =
+                PendingIntent.getBroadcast(this, 0, intent, 0)
+            val alarmManager =
+                getSystemService(ALARM_SERVICE) as AlarmManager
+            val timeAtButtonClick = System.currentTimeMillis()
+            val tenSecondsInMillis = (1000 * 1800).toLong()
+            alarmManager[AlarmManager.RTC_WAKEUP, timeAtButtonClick + tenSecondsInMillis] =
+                pendingIntent
+        }
+
+
+
+
+
+
+
 
         val variableName = findViewById<Button>(R.id.button_to_weight2);
         variableName.setOnClickListener{
@@ -64,4 +99,6 @@ class name : AppCompatActivity() {
             notificationManager.createNotificationChannel(channel)
         }
     }
+
+
 }

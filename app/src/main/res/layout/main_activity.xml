@@ -29,7 +29,7 @@
         android:text="Button"
         app:layout_constraintBottom_toTopOf="@+id/button_to_weight"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="UnknownId" />
 
@@ -38,8 +38,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="Button"
+        android:text="10 seconds reminder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/butt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30 minute reminder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_timer" />
+
+    <Button
+        android:id="@+id/butt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1 hour reminder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/butt" />
 </androidx.constraintlayout.widget.ConstraintLayout>
